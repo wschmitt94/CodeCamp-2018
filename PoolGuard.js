@@ -1,13 +1,22 @@
-var title = document.QuerySelector("H1");
-title.style.color("red");
+var title = document.querySelector("h1");
 var danger = false;
-while(!danger)
-	fetch('http://8080/myresource').then(function(response){
-		return response.json();
-	}).then(function(myResponse){
-		console.log(JSON.stringify(myResponse));
-	})
+
+setInterval(checkForDanger, 3000);
+function checkForDanger() {
+
+	var d = new Date();
+	var time = d.getSeconds();
+	if(time % 2){
+		danger = true;
+	} else {
+		danger = false;
+	}
+	console.log(danger, time);
+}
+
 
 if(danger){
-	title.style.color("yellow")
+	title.style.color = "yellow";
+} else {
+	title.style.color = "red";
 }

@@ -7,7 +7,9 @@ class myHandler(BaseHTTPRequestHandler):
 	def do_GET():
 		self.send_response(200)
 		self.send_headers("Content-type", "application/json")
-		json_string = json.dumps("false")
+		if iterations < 10:
+			json_string = json.dumps("false")
+			self.iterations += 1
 		self.wfile.write(bytes(json_string))
 		self.end_headers()
 
