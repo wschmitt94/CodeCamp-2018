@@ -4,15 +4,51 @@
 	<meta charset="utf-8">
 	<title>Pool Guard</title>
 	<meta name="description" content="Pool Guard Portal">
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="poolGuard.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
 	<div id="wrapper">
-		<div>
-			<h1>Pool Guard</h1>
+
+		<div class="background">
+
+			<div class="navBar">
+				<div class="logo">
+					<h1>Pool Guard</h1>
+				</div>
+			</div>
+
+			<div class="mainBody">
+				<div class="user">
+					<img src="momAvatar.jpg" alt="User Avatar" class="avatar"></img>
+					<!-- username needs to be dinamically sorced via javascript -->
+					<h2>User Name</h2>
+				</div>
+
+				<div id="warning">
+					<h2>SOMEONE IS IN IMMINENT PERIL</h2>
+					<div id="dismiss" class="normal">I don't care</div>
+				</div>
+
+				<!-- children will need to be populated automatically through java based on names pulled from database. -->
+				<div class="children">
+					<div class="childrenContent">
+						<div><img src="childAvatar.jpg" alt="Child Avatar" class="avatar"></img>
+						<h3>Child Name</h3></div>
+						<div><button id="check" class="normal">Check Status</button></div>
+						<div><button id="remove" class="sanBackground">remove</button></div>
+					</div>
+					<div class="addButton">
+							<button id="add" class="normal">Add Child</button>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
+
 	</div>
-	<script src="PoolGuard.js" type="text/javascript"></script>
+	<script src="PoolGuard.js"></script>
 </body>
 </html>
